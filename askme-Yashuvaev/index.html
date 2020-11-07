@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Sticky Footer Navbar Template · Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+
+
+  
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/my.css" rel="stylesheet">
+  </head>
+  <body class="d-flex flex-column h-100">
+    <header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">AskMe</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ASK!</button>
+      </form>
+    </div>
+    <div id="userblock" class="userblock logged-user">
+            <table class="for-logged-user">
+                <tr>
+                    <td rowspan=3><img src="img/1.png" alt="user-avatar" /></td>
+                    <td colspan=2>
+                        <div class="user-name">Dr. Pepper</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="" class="userblock-ref">Settings</a></td>
+                    <td><a href="#" onclick="logout()" class="userblock-ref">Log out</a></td>
+                </tr>
+            </table>
+
+            <table class="for-unlogged-user">
+                <tr>
+                    <td><a href="#" onclick="login()" class="userblock-ref">Log in</a></td>
+                    <td><a href="" class="userblock-ref">Register</a></td>
+                </tr>
+            </table>
+        </div>
+  </nav>
+</header>
+
+<!-- Begin page content -->
+<main role="main" class="flex-shrink-0">
+    <div class="topic">
+        <div class="row">
+            <div class="col-4">Latest questions</div>
+            <div class="col-7">
+                <a class="hot-link" href="#">Hot questions</a>
+            </div>
+        </div>
+    </div>
+  <div class="container">
+  <div class="row">
+    <div class="col-9">
+        <div class="row question-box">
+            <div class="col-3">
+                <img class="question-img" src="img/200.jpg"></img>
+            </div>
+            <div class="col-9">
+                <div class="question-title">
+                    <a class="question-link" href="#">Doing home work making you sad, is not it?</a>
+                </div>
+                <div class="question-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+                <div class="row second-con">
+                    <div class="col-6"> 
+                        <a class="comments-link" href="#">Comments</a>
+                    </div>
+                    <div class="col-3">Tags: 
+                        <a class="curr-tag" href="#">Sadness</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row question-box">
+            <div class="col-3">
+                <img class="question-img" src="img/11.jpg"></img>
+            </div>
+            <div class="col-9">
+                <div class="question-title">
+                    <a class="question-link" href="#">Doing home work making you sad, is not it?</a>
+                </div>
+                <div class="question-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+                <div class="row second-con">
+                    <div class="col-6"> 
+                        <a class="comments-link" href="#">Comments</a>
+                    </div>
+                    <div class="col-3">Tags: 
+                        <a class="curr-tag" href="#">Sadness</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row question-box">
+            <div class="col-3">
+                <img class="question-img" src="img/3.jpg"></img>
+            </div>
+            <div class="col-9">
+                <div class="question-title">
+                    <a class="question-link" href="#">Doing home work making you sad, is not it?</a>
+                </div>
+                <div class="question-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+                <div class="row second-con">
+                    <div class="col-6"> 
+                        <a class="comments-link" href="#">Comments</a>
+                    </div>
+                    <div class="col-3">Tags: 
+                        <a class="curr-tag" href="#">Sadness</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-end">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+    </div>
+    <div class="col-3">
+      <div class="popular-tags">Popular tags:</div>
+            <a href="" class="pop-tag-1">perl</a>
+            <a href="" class="pop-tag-4">Python</a>
+            <a href="" class="pop-tag-1">Technopark</a>
+            <a href="" class="pop-tag-4">Trump</a>
+            <a href="" class="pop-tag-3">Warface</a>
+            <a href="" class="pop-tag-1">Sadness</a>
+            <a href="" class="pop-tag-1">C++</a>
+            <a href="" class="pop-tag-2">Firefox</a>
+      <div class="top-members">Top users:</div>    
+        <div class="listing-top-mem">
+                      <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Mihail</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Grigoriy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sasha</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Naum</a>
+              </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="footer mt-auto py-3">
+  <div class="container">
+    <span class="text-muted"></span>
+  </div>
+</footer>
+<script src="js/jquery.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+      </body>
+</html>

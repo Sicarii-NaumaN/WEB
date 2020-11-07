@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Sticky Footer Navbar Template · Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+
+
+  
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/my.css" rel="stylesheet">
+  </head>
+  <body class="d-flex flex-column h-100">
+    <header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">AskMe</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ASK!</button>
+      </form>
+    </div>
+    <div id="userblock" class="userblock ">
+            <table class="for-logged-user">
+                <tr>
+                    <td rowspan=3><img src="img/1.png" alt="user-avatar" /></td>
+                    <td colspan=2>
+                        <div class="user-name">Dr. Pepper</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="" class="userblock-ref">Settings</a></td>
+                    <td><a href="#" onclick="logout()" class="userblock-ref">Log out</a></td>
+                </tr>
+            </table>
+
+            <table class="for-unlogged-user">
+                <tr>
+                    <td><a href="#" onclick="login()" class="userblock-ref">Log in</a></td>
+                    <td><a href="" class="userblock-ref">Register</a></td>
+                </tr>
+            </table>
+        </div>
+  </nav>
+</header>
+
+<!-- Begin page content -->
+<main role="main" class="flex-shrink-0">
+    <div class="topic">
+        <div class="row">
+            <div class="col-4">Register</div>
+        </div>
+    </div>
+  <div class="container">
+  <div class="row">
+    <div class="col-9">
+        <form class="register-box">
+                <div class="mb-3">
+                  <label for="validationTextarea">Login</label>
+                  <input class="form-control is-invalid" id="validationTextarea" placeholder="Your login" required></input>
+                  <div class="invalid-feedback">
+                    Please enter a valid login.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="validationTextarea">Email</label>
+                  <input class="form-control is-invalid" id="validationTextarea" placeholder="Your email" required></input>
+                  <div class="invalid-feedback">
+                    Please enter a valid email.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="validationTextarea">Nickname</label>
+                  <input class="form-control is-invalid" id="validationTextarea" placeholder="Your nickname" required></input>
+                  <div class="invalid-feedback">
+                    Please enter a valid nickname.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword5">Password</label>
+                  <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                  <small id="passwordHelpBlock" class="form-text text-muted">
+                    Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                  </small>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword5">Repeat password</label>
+                  <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                  <small id="passwordHelpBlock" class="form-text text-muted">
+                    Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                  </small>
+                </div>
+
+                <div class="input-group is-invalid">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
+                    <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
+                  </div>
+                  <div class="input-group-append">
+                     <button class="btn btn-outline-secondary" type="button">Confirm</button>
+                  </div>
+                </div>
+                <div class="invalid-feedback">
+                  Example invalid input group feedback
+                </div>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Register!</button>
+         </form>
+    </div>
+    <div class="col-3">
+      <div class="popular-tags">Popular tags:</div>
+            <a href="" class="pop-tag-1">perl</a>
+            <a href="" class="pop-tag-4">Python</a>
+            <a href="" class="pop-tag-1">Technopark</a>
+            <a href="" class="pop-tag-4">Trump</a>
+            <a href="" class="pop-tag-3">Warface</a>
+            <a href="" class="pop-tag-1">Sadness</a>
+            <a href="" class="pop-tag-1">C++</a>
+            <a href="" class="pop-tag-2">Firefox</a>
+      <div class="top-members">Top users:</div>    
+        <div class="listing-top-mem">
+                      <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Mihail</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Grigoriy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sasha</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Naum</a>
+              </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="footer mt-auto py-3">
+  <div class="container">
+    <span class="text-muted"></span>
+  </div>
+</footer>
+<script src="js/jquery.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+      </body>
+</html>
