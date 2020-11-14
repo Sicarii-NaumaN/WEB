@@ -1,0 +1,6 @@
+venv
+mode_modules
+.idea
+vscode
+*.pyc
+__pycache__
