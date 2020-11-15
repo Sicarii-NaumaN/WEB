@@ -3,8 +3,6 @@ from django.views.generic import ListView
 from django.core.paginator import Paginator
 
 
-from myapp.models import Contact
-
 # Create your views here.
 
 questions = [
@@ -16,11 +14,11 @@ questions = [
 
 ]
 
+
 def index(request):
-	contact_list = Contact.objects.all()
-	paginator = Paginator(contact_list, 25)
+	paginator = Paginator(questions, 2)
 	page_number = request.GET.get('page')
-	questions = paginator.get_page(page_number)
+	index_questions = paginator.get_page(page_number)
 	return render(request, 'index.html', {
 		'questions' :questions,
 		}) 
