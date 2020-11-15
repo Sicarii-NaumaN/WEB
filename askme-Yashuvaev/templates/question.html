@@ -19,13 +19,11 @@
     <div class="col-9">
         {% include 'inc/topic_question.html' %}      
 
-
-        {% include 'inc/one_comment.html' %}
-        {% include 'inc/one_comment.html' %}
-        {% include 'inc/one_comment.html' %}
-        {% include 'inc/one_comment.html' %}
-        {% include 'inc/one_comment.html' %}
-        {% include 'inc/one_comment.html' %}
+        {% for questions in question %}
+            {% include 'inc/one_comment.html' %}
+        {% endfor %}
+        
+        
         <div class="add-comment-box">
             <form>
               <div class="your-answer">

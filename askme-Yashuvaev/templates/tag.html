@@ -10,24 +10,18 @@
   {% endblock user %}
 
 {% block content %}
-            <div class="topicm">Tag: Sadness</div>
+            <div class="topic2">Tag: Sadness</div>
         </div>
     </div>
   <div class="container">
   <div class="row">
     <div class="col-9">
-        {% include 'inc/one_question.html' %}
-        {% include 'inc/one_question.html' %}
-        {% include 'inc/one_question.html' %}
-        {% include 'inc/one_question.html' %}
-        {% include 'inc/one_question.html' %}
-        {% include 'inc/one_question.html' %}
-        {% include 'inc/one_question.html' %}
-        {% include 'inc/one_question.html' %}
-        {% include 'inc/one_question.html' %}
-        {% include 'inc/one_question.html' %}
-        {% include 'inc/one_question.html' %}
-        {% include 'inc/one_question.html' %}
+        {% for question in questions %}
+            {% include 'inc/one_question.html' %}
+        {% endfor %}
+        
+        
+      
                {% include 'inc/paginator.html' %}
 
 {% endblock content %}
