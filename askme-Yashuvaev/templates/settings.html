@@ -1,0 +1,47 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block meta %}
+{% include 'inc/meta.html' %}
+  {% endblock meta %}
+{% block user %}
+  {% include 'inc/logged_user.html' %}
+  {% endblock user %}
+
+{% block content %}
+            <div class="col-4">Settings: Dr. Pepper</div>
+        </div>
+    </div>
+  <div class="container">
+  <div class="row">
+    <div class="settings-box col-9 ">
+         <div class="login-user row">
+            <label for="colFormLabel" class="col-sm-2 col-form-label">Login</label>
+            <div class="col-sm-10">
+              <input type="login" class="form-control" id="colFormLabel" value="dr_pepper">
+            </div>
+          </div>
+          <div class="email-user row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="colFormLabel" value="dr.pepper@mail.ru">
+                </div>
+           </div>
+           <div class="nick-user row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">Nickname</label>
+                <div class="col-sm-10">
+                    <input type="nick-user" class="form-control" id="colFormLabel" value="Dr. Pepper">
+                </div>
+           </div>
+           <div class="avatar-user row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">Avatar</label>
+                <div class="change-avatar col-sm-7">
+                  <input type="file" class="custom-file-input" id="customFile">
+                  <label class="custom-file-label" for="customFile">img/1.png</label>
+                </div>
+                <img class="set-avatar" src="{% static "img/1.png" %}"></img>
+           </div>
+
+           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Save</button>
+                
+    {% endblock content %}

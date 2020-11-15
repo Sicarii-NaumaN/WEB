@@ -1,0 +1,65 @@
+{% load static %}
+
+  {% block meta %}
+  {% endblock meta %}
+
+  {% include 'inc/navbar.html' %}
+
+
+  {% block user %}
+  {% endblock user %}
+  </nav>
+  
+</header>
+
+<!-- Begin page content -->
+
+<main role="main" class="flex-shrink-0">
+    <div class="topic">
+        <div class="row">
+            {% block content %}
+        {% endblock content %}
+    </div>
+    <div class="col-3">
+        <div class="popular-tags">Popular tags:</div>
+            <a href="" class="pop-tag-1">perl</a>
+            <a href="" class="pop-tag-4">Python</a>
+            <a href="" class="pop-tag-1">Technopark</a>
+            <a href="" class="pop-tag-4">Trump</a>
+            <a href="" class="pop-tag-3">Warface</a>
+            <a href="{% url 'tag' %}" class="pop-tag-1">Sadness</a>
+            <a href="" class="pop-tag-1">C++</a>
+            <a href="" class="pop-tag-2">Firefox</a>
+      <div class="top-members">Top users:</div>    
+        <div class="listing-top-mem">
+                      <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Mihail</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Grigoriy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sasha</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Naum</a>
+              </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="footer mt-auto py-3">
+  <div class="container">
+    <span class="text-muted"></span>
+  </div>
+</footer>
+<script src="js/jquery.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+      </body>
+</html>

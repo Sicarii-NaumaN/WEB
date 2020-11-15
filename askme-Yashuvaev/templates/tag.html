@@ -1,0 +1,33 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block meta %}
+{% include 'inc/meta.html' %}
+  {% endblock meta %}
+
+  {% block user %}
+  {% include 'inc/logged_user.html' %}
+  {% endblock user %}
+
+{% block content %}
+            <div class="topicm">Tag: Sadness</div>
+        </div>
+    </div>
+  <div class="container">
+  <div class="row">
+    <div class="col-9">
+        {% include 'inc/one_question.html' %}
+        {% include 'inc/one_question.html' %}
+        {% include 'inc/one_question.html' %}
+        {% include 'inc/one_question.html' %}
+        {% include 'inc/one_question.html' %}
+        {% include 'inc/one_question.html' %}
+        {% include 'inc/one_question.html' %}
+        {% include 'inc/one_question.html' %}
+        {% include 'inc/one_question.html' %}
+        {% include 'inc/one_question.html' %}
+        {% include 'inc/one_question.html' %}
+        {% include 'inc/one_question.html' %}
+               {% include 'inc/paginator.html' %}
+
+{% endblock content %}

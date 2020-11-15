@@ -1,0 +1,203 @@
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+main > .container {
+  padding: 60px 15px 0;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+
+.question-box {
+    margin-top: 30px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.question-box-answers {
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.comment-box {
+    margin-top: 30px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+}
+.comment-img {
+	vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+
+.question-img {
+	vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.question-title {
+	font-size: 20px;
+	font-weight: bold;
+}
+.popular-tags {
+	font-size: 30px;
+	font-weight: bold;
+	color: dark gray;
+}
+
+.top-members {
+	font-size: 30px;
+	font-weight: bold;
+	color: dark gray;
+}
+
+.listing-top-mem {
+	font-size: 20px;
+	text-decoration: underline;
+}
+.topic {
+	margin-top: 90px;
+    margin-left: 40px;
+    font-size: 30px;
+    margin-bottom: -70px;
+}
+
+.hot-link {
+	font-size: 20px;
+    text-decoration: underline;
+}
+.userblock img {
+	max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+}
+
+.userblock .for-logged-user {
+	display: none;
+}
+.userblock .for-unlogged-user {
+	display: block;
+}
+.userblock.logged-user .for-logged-user {
+	display: block;
+}
+.userblock.logged-user .for-unlogged-user {
+	display: none;
+}
+
+.userblock .user-name {
+	color: white;
+}
+.userblock .userblock-ref {
+	font-size: 13px;
+	padding: 5px
+}
+
+.pop-tag-4 {
+	font-size: 20px;
+	color: red;
+}
+
+.pop-tag-2 {
+	color: green;
+}
+
+.pop-tag-3 {
+	color: orange;
+}
+.row .second-con {
+	font-size: 16px;
+	margin-top: 10px;
+}
+.title-of-q {
+	margin-top:  20px;
+}
+
+.tags-of-q {
+	margin-top:  20px;
+	margin-bottom: 20px;
+}
+
+.text-of-q {
+	margin-top:  20px;
+
+}
+.like-dislike {
+	position: relative;
+    left: 300px;
+}
+
+.your-answer {
+	padding:  20px;
+}
+
+ .add-comment-box .btn {
+ margin-left: 20px;
+}
+
+
+.login-box {
+	margin-top: 20px;
+}
+
+.login-box .btn {
+	margin-left: 20px;
+}
+.login-box .form-check {
+	margin-left: 20px;
+}
+.register-box {
+	margin-top: 20px;
+
+	margin-left: 20px;
+}
+.settings-box {
+	margin-top: 20px;
+}
+
+.login-user {
+	margin-top:  20px;
+}
+.email-user {
+	margin-top:  20px;
+}
+.nick-user {
+	margin-top:  20px;
+}
+.avatar-user {
+	margin-top: 60px;
+}
+.change-avatar {
+	left: 15px;
+}
+.set-avatar {
+	width: 80px;
+    height: 80px;
+    position: relative;
+    right: -60px;
+    bottom: 30px;
+}
+
+.l-d {
+	margin-top: 20px;
+    margin-left: 10px;
+}

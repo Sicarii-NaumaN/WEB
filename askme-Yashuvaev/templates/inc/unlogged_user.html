@@ -1,0 +1,23 @@
+{% load static %}
+
+<div id="userblock" class="userblock">
+            <table class="for-logged-user">
+                <tr>
+                    <td rowspan=3><img src="{% static "img/1.png" %}" alt="user-avatar" /></td>
+                    <td colspan=2>
+                        <div class="user-name">Dr. Pepper</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="{% url 'settings' %}" class="userblock-ref">Settings</a></td>
+                    <td><a href="{% url 'login' %}" onclick="logout()" class="userblock-ref">Log out</a></td>
+                </tr>
+            </table>
+
+            <table class="for-unlogged-user">
+                <tr>
+                    <td><a href="{% url 'login' %}" onclick="login()" class="userblock-ref">Log in</a></td>
+                    <td><a href="{% url 'register' %}" class="userblock-ref">Register</a></td>
+                </tr>
+            </table>
+        </div>
