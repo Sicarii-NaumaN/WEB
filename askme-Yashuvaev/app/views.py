@@ -19,7 +19,7 @@ questions = [
 
 
 def index(request):
-	page = paginate(questions, request, 3)
+	page = paginate(questions, request)
 	return render(request, 'index.html', {
 		'page_obj' :page,
 		}) 
