@@ -19,7 +19,7 @@
     <div class="col-9">
         {% include 'inc/topic_question.html' %}      
 
-        {% for questions in question %}
+        {% for question in page_obj.object_list %}
             {% include 'inc/one_comment.html' %}
         {% endfor %}
         

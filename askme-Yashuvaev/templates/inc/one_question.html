@@ -10,18 +10,18 @@
             </div>
             <div class="col-9">
                 <div class="question-title">
-                    <a class="question-link" href="">Doing home work making you sad, is not it?</a>
+                    <a class="question-link" href="{% url 'question' pk=1 %}">Doing home work making you sad, is not it?</a>
                 </div>
                 <div class="question-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                cillpk=1re eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
                 <div class="row second-con">
                     <div class="col-6"> 
-                        <a class="comments-link" href="{% url 'question' question.id %}">Comments</a>
+                        <a class="comments-link" href="{% url 'question' pk=1 %}">Comments</a>
                     </div>
                     <div class="col-3">Tags: 
                         <a class="curr-tag" href="{% url 'tag'  %}">Sadness</a>

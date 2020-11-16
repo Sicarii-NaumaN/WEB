@@ -3,6 +3,9 @@ from django.views.generic import ListView
 from django.core.paginator import Paginator
 
 
+
+
+
 # Create your views here.
 
 questions = [
@@ -11,16 +14,16 @@ questions = [
      'title': f'title {idx}',
      'text': 'text text',
     } for idx in range(10)
-
 ]
+
 
 
 def index(request):
 	paginator = Paginator(questions, 2)
 	page_number = request.GET.get('page')
-	index_questions = paginator.get_page(page_number)
+	page = paginator.get_page(page_number)
 	return render(request, 'index.html', {
-		'questions' :questions,
+		'page_obj' :page,
 		}) 
 
 def new_question(request):
@@ -32,8 +35,11 @@ def login_page(request):
 def settings_page(request):
 	return render(request, 'settings.html', {})
 def tags_page(request):
+	paginator = Paginator(questions, 3)
+	page_number = request.GET.get('page')
+	page = paginator.get_page(page_number)
 	return render(request, 'tag.html', {
-		'questions' :questions,
+		'page_obj' : page,
 		})
 
 def register_page(request):
@@ -41,8 +47,11 @@ def register_page(request):
 
 def question_page(request, pk):
 	question = questions[pk]
+	paginator = Paginator(questions, 2)
+	page_number = request.GET.get('page')
+	page = paginator.get_page(page_number)
 	return render(request, 'question.html', {
-		'questions' : questions,
+		'page_obj' : page,
 		})
 def paginate(objects_list, request, per_page=10):
     # do smth with Paginator, etc…
