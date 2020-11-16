@@ -19,9 +19,7 @@ questions = [
 
 
 def index(request):
-	paginator = Paginator(questions, 2)
-	page_number = request.GET.get('page')
-	page = paginator.get_page(page_number)
+	page = paginate(questions, request, 3)
 	return render(request, 'index.html', {
 		'page_obj' :page,
 		}) 
@@ -35,9 +33,7 @@ def login_page(request):
 def settings_page(request):
 	return render(request, 'settings.html', {})
 def tags_page(request):
-	paginator = Paginator(questions, 3)
-	page_number = request.GET.get('page')
-	page = paginator.get_page(page_number)
+	page = paginate(questions, request, 3)
 	return render(request, 'tag.html', {
 		'page_obj' : page,
 		})
@@ -47,12 +43,12 @@ def register_page(request):
 
 def question_page(request, pk):
 	question = questions[pk]
-	paginator = Paginator(questions, 2)
-	page_number = request.GET.get('page')
-	page = paginator.get_page(page_number)
+	page = paginate(questions, request, 3)
 	return render(request, 'question.html', {
 		'page_obj' : page,
 		})
-def paginate(objects_list, request, per_page=10):
-    # do smth with Paginator, etc…
+def paginate(objects_list, request, per_page=2):
+    paginator = Paginator(objects_list, per_page)
+    page_number = request.GET.get('page')
+    page = paginator.get_page(page_number)
     return page
