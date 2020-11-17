@@ -1,0 +1,38 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block meta %}
+{% include 'inc/meta.html' %}
+  {% endblock meta %}
+{% block user %}
+  {% include 'inc/logged_user.html' %}
+  {% endblock user %}
+
+
+<!-- Begin page content -->
+{% block content %}
+            <div class="col-4">Discussing</div>
+        </div>
+    </div>
+  <div class="container">
+  <div class="row">
+    <div class="col-9">
+        {% include 'inc/topic_question.html' %}      
+
+        {% for a in page_obj.object_list %}
+            {% include 'inc/one_comment.html' %}
+        {% endfor %}
+        
+        
+        <div class="add-comment-box">
+            <form>
+              <div class="your-answer">
+                <label for="exampleFormControlTextarea1">Add answer</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Your answer"></textarea>
+              </div>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Answer!</button>
+            </form>
+            
+        </div>
+            {% include 'inc/paginator.html' %}
+     {% endblock content %}

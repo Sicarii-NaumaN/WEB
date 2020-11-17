@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="row question-box-answers">
+            <div class="col-3">
+                <img class="question-img" src="{% static "img/200.jpg" %}"></img>
+                <div class="l-d" role="group" aria-label="Button group with nested dropdown">
+                      <button type="button" class="btn btn-secondary">like</button>
+                      <button type="button" class="btn btn-secondary">dislike</button>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="question-title">
+                    <a class="question-link" href="">{{ page_obj.object_list.title }}</a>
+                </div>
+                <div class="question-text">{{ a.text }}
+            </div>
+                <div class="row second-con">
+                    <div class="col-3">Tags: 
+                        <a class="curr-tag" href="{% url 'tag' %}">Sadness</a>
+                    </div>
+                </div>
+            </div>
+        </div>

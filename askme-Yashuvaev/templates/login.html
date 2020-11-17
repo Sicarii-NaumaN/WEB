@@ -1,0 +1,48 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block meta %}
+{% include 'inc/meta.html' %}
+  {% endblock meta %}
+{% block user %}
+  {% include 'inc/unlogged_user.html' %}
+  {% endblock user %}
+
+
+<div id="userblock" class="userblock">
+      {% include 'navbar.html' %}
+</div>
+
+{% block content %}
+            <div class="col-4">Sign in</div>
+        </div>
+    </div>
+  <div class="container">
+  <div class="row">
+    <div class="col-9">
+         
+        <form>
+          <div class="login-box">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Password</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div>
+          
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Remember me
+              </label>
+            </div>
+          </div>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign in</button>
+                <a class="nav-link" href="#">Create new account!!!</a>
+              </li>
+        </form>
+    </div>
+  {% endblock content %}

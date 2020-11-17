@@ -1,0 +1,26 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block meta %}
+{% include 'inc/meta.html' %}
+  {% endblock meta %}
+{% block user %}
+  {% include 'inc/logged_user.html' %}
+  {% endblock user %}
+{% block content %}
+            <div class="col-4">Latest questions</div>
+            <div class="col-7">
+                <a class="hot-link" href="#">Hot questions</a>
+            </div>
+        </div>
+    </div>
+  <div class="container">
+  <div class="row">
+    <div class="col-9">
+        {% for a in page_obj.object_list %}
+            {% include 'inc/one_question.html' %}
+        {% endfor %}
+
+        
+        {% include 'inc/paginator.html' %}
+        {% endblock content %}
