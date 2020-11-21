@@ -20,7 +20,9 @@
         {% include 'inc/topic_question.html' %}      
 
         {% for a in page_obj.object_list %}
+            {% if a.article == state %}
             {% include 'inc/one_comment.html' %}
+            {% endif %}
         {% endfor %}
         
         

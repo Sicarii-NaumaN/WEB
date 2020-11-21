@@ -126,7 +126,8 @@ code {
 }
 .row .second-con {
 	font-size: 16px;
-	margin-top: 110px;
+	position: absolute;
+    bottom: -20px;
 }
 .title-of-q {
 	margin-top:  20px;
@@ -143,7 +144,7 @@ code {
 }
 .like-dislike {
 	position: relative;
-    left: 300px;
+    left: 280px;
 }
 
 .your-answer {
@@ -205,4 +206,43 @@ code {
 .pagination {
     margin-left: 20px;
     margin-top: 10px;
+}
+
+.row .second-conn {
+	font-size: 16px;
+    position: absolute;
+    bottom: -20px;
+}
+
+.like-counter {
+    margin-top: 20px;
+    text-align: center;
+}
+.like-counter .info {
+    margin-bottom: 5px;
+}
+
+.like-counter .info > span {
+    display: inline-block;
+    background-color:rgba(0, 0, 0, 0.1);
+    width: auto;
+    padding: 4px 7px;
+    border-radius: 50%;
+}
+
+.like-button {
+    display: inline-block;
+    background-image: url(../img/like-dec.png);
+    background-size: contain;
+    height: 20px;
+    width: 20px;
+    transform: scale(1, -1);
+}
+
+.dislike-button {
+    display: inline-block;
+    background-image: url(../img/like-inc.png);
+    background-size: contain;
+    height: 20px;
+    width: 20px;
 }
