@@ -22,29 +22,17 @@
     </div>
     <div class="col-3">
         <div class="popular-tags">Popular tags:</div>
-            <a href="" class="pop-tag-1">perl</a>
-            <a href="" class="pop-tag-4">Python</a>
-            <a href="" class="pop-tag-1">Technopark</a>
-            <a href="" class="pop-tag-4">Trump</a>
-            <a href="" class="pop-tag-3">Warface</a>
-            <a href="{% url 'tag' %}" class="pop-tag-1">Sadness</a>
-            <a href="" class="pop-tag-1">C++</a>
-            <a href="" class="pop-tag-2">Firefox</a>
+            
+            {% for tag in top_tags %}
+            <a href="{% url 'tag' tag.name %}" class="pop-tag-4">{{ tag.name }}</a>
+            {% endfor%}
+         
       <div class="top-members">Top users:</div>    
         <div class="listing-top-mem">
                       <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Mihail</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Grigoriy</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Sasha</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Naum</a>
-              </li>
+              {% for user in top_users %}
+                                <li><a href="">{{user}}</a></li>
+                            {% endfor %}
             </ul>
         </div>
     </div>

@@ -11,6 +11,29 @@ class ProfileManager(models.Manager):
     def getByUsername(self, username):
         return self.all().filter()
 
+    def get_rating(self):
+        user_questions = Article.objects.filter(author_id = self.pk)
+        sum_rating = 0
+        for q in user_questions:
+            sum_like = 0
+            for like in QuestionLike.objects.filter(linked_with_id = q.pk):
+                if (like.value == True):
+                    sum_like += 1
+                else:
+                    sum_like -= 1
+            sum_rating += sum_like
+
+        user_answers =Comment.objects.filter(user_id = self.pk)
+        for a in user_answers:
+            sum_like = 0
+            for like in AnswerLike.objects.filter(linked_with_id = a.pk):
+                if (like.value == True):
+                    sum_like += 1
+                else:
+                    sum_like -= 1
+            sum_rating += sum_like
+        return sum_rating
+
 class LikeManager(models.Manager):
     def get_likes(self, instance):
         return self.filter(value=True, linked_with__pk=instance.pk)
@@ -65,12 +88,15 @@ class ArticleManager(models.Manager):
     def get_username(self):
         return self.user.username
 
+    def user_image(self):
+        return Profile.objects.get(user_id = self.author.pk).avatar.url
+
 class CommentManager(models.Manager):
     def get_all(self):
         return self.all()
 
     def get_answers_by_question_pk(self, pk):
-        return self.filter(article_pk=pk)
+        return self.filter(question_id=pk)
 
     def question_answers_count(self, pk):
         return self.get_answers_by_question_pk(pk).count()
@@ -83,9 +109,10 @@ class CommentManager(models.Manager):
 class Article(models.Model):
     title = models.CharField(max_length=1024, verbose_name='Заголовок')
     text = models.TextField(verbose_name='Текст')
-    is_published = models.BooleanField(default=False, verbose_name='Опубликован')
-    published = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
-    date_create = models.DateField(auto_now_add=True, verbose_name='Дата создания')
+    publication_date = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Дата публикации"
+    )
     author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL, verbose_name='Автор')
 
     tags = models.ManyToManyField('Tag', verbose_name="Теги")
@@ -95,7 +122,7 @@ class Article(models.Model):
     likes_count = ArticleManager.get_likes
     hot = ArticleManager.hot
     objects = ArticleManager()
-    
+    user_image = ArticleManager.user_image
 
     def __str__(self):
         return self.title
@@ -106,11 +133,12 @@ class Article(models.Model):
 
 class Comment(models.Model):
     text = models.TextField(verbose_name='Текст')
-    is_published = models.BooleanField(default=False, verbose_name='Опубликован')
-    date_published = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
-    date_create = models.DateField(auto_now_add=True, verbose_name='Дата создания')
-    article = models.ForeignKey('Article', on_delete=models.CASCADE)
-    author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL, verbose_name='Дата публикации')
+    publication_date = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Дата публикации"
+    )
+    question = models.ForeignKey('Article', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL, verbose_name='Дата публикации')
 
     right = models.BooleanField(default=False, verbose_name="Ответ является правильным")    
 
@@ -138,9 +166,10 @@ class Profile(models.Model):
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name="Связанный пользователь")
     objects = ProfileManager()
+    get_rating = ProfileManager.get_rating
 
     def __str__(self):
-        return self.objects.user.username
+        return self.user.username
 
 class AnswerLike(models.Model):
     value = models.BooleanField(

@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
+    'blog.blogs.AppConfig',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +63,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'blog.context_processors.top_tags',
+                'blog.context_processors.questions',
+                'blog.context_processors.tags',
+                'blog.context_processors.profiles',
+                'blog.context_processors.top_users',
             ],
         },
     },
@@ -76,12 +81,18 @@ WSGI_APPLICATION = 'askme_Yashuvaev.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': './my.cnf',
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'OPTIONS': {
+#           'read_default_file': './my.cnf',
+#        },
+#    }
+#}
 
 
 # Password validation
@@ -124,3 +135,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"

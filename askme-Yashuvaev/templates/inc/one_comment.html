@@ -3,7 +3,7 @@
 <div class="row comment-box">
             <div class="col-4">
                 <img class="comment-img" src="{% static "img/11.jpg" %}"></img>
-                <div class="author row">Author : {{ a.author }}</div>
+                <div class="author row">Author : {{ a.user }}</div>
             </div>
 
             <div class="col-8">
@@ -13,7 +13,7 @@
                  <span class="likebtn-wrapper" data-identifier="item_1"></span>
                     <!-- LikeBtn.com BEGIN -->
                     <div class="like-dislike" role="group" aria-label="Button group with nested dropdown">
-                      <button type="button" class="btn btn-secondary">like</button> 0 
+                      <button type="button" class="btn btn-secondary">like({{ a.likes_count }})</button>
                       <button type="button" class="btn btn-secondary">dislike</button>
                     </div>
                     <!-- LikeBtn.com END -->

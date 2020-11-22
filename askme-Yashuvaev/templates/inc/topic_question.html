@@ -18,7 +18,9 @@
             </div>
                 <div class="row second-conn">
                     <div class="col-3">Tags: 
-                        <a class="curr-tag" href="{% url 'tag' %}">Sadness</a>
+                        {% for tag in state.tags.all %}
+                         <a class="curr-tag" href="{% url 'tag' tag.name %}">{{tag.name }}</a>
+                         {% endfor %}
                     </div>
                 </div>
             </div>

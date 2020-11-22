@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
 
 from blog import views
 
@@ -23,8 +25,10 @@ urlpatterns = [
     path('login/', views.login_page, name='login'),
     path('settings/', views.settings_page, name='settings'),
     path('register/', views.register_page, name='register'),
-    path('tag/', views.tags_page, name='tag'),
+    path('tag/<str:tag>/', views.tags_page, name='tag'),
     path('question/<int:pk>/', views.question_page, name='question'),
     path('', views.index, name='main'),
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
